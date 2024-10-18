@@ -1,5 +1,3 @@
-@import url(https://fonts.bunny.net/css?family=roboto:400,500,700);
-
 html,
 body,
 div,
@@ -128,12 +126,7 @@ a {
     color: inherit;
     text-decoration: none;
 }
-h1,
-h2,
-h3 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-}
+
 img,
 video {
     max-width: 100%;
@@ -149,7 +142,7 @@ video {
 *,
 html,
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     font-weight: 500;
 }
 .sr-only {
