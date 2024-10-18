@@ -1,7 +1,11 @@
+import Navigation from "../components/Navigation";
+
 export default function Home() {
     return (
         <>
-            <h1>Hello world</h1>
+            <header>
+                <Navigation />
+            </header>
         </>
     );
 }
