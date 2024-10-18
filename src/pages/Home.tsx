@@ -1,11 +1,13 @@
-import Navigation from "../components/Navigation";
+import Header from "../components/Header";
+import HeroBanner from "../components/HeroBanner";
 
 export default function Home() {
     return (
         <>
-            <header>
-                <Navigation />
-            </header>
+            <Header />
+            <main>
+                <HeroBanner />
+            </main>
         </>
     );
 }
