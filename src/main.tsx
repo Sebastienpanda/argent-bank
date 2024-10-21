@@ -1,23 +1,13 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./assets/scss/main.scss";
-import Home from "./pages/Home";
-import SigninPage from "./pages/Signin";
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Home />,
-    },
-    {
-        path: "/signin",
-        element: <SigninPage />,
-    },
-]);
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import App from "./app";
+import store from "./store/store";
 
 createRoot(document.getElementById("root")!).render(
-    <StrictMode>
-        <RouterProvider router={router} />
-    </StrictMode>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
 );
