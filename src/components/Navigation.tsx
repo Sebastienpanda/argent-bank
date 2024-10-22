@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,9 +10,11 @@ export default function Navigation() {
     const user = useSelector((state: RootState) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [isLoggedOut, setIsLoggedOut] = useState(false);
 
     const handleLogout = () => {
         dispatch(logout());
+        setIsLoggedOut(true);
         navigate("/");
     };
     return (
@@ -21,7 +24,7 @@ export default function Navigation() {
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>
             <div>
-                {user.isLoggedIn ? (
+                {user.isLoggedIn && !isLoggedOut ? (
                     <>
                         <Link className="item" to="/profile">
                             <FaUserCircle />
